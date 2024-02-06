@@ -20,7 +20,7 @@ body {
     max-width: 450px;
     width: 100%;
     border: 2px solid #ddd;
-    box-sizing: border-box; /* Added box-sizing property */
+    box-sizing: border-box;
 }
 
 h1 {
@@ -36,6 +36,7 @@ form {
 
 .input-group {
     margin-bottom: 15px;
+    background-color: #fff; /* Set background color to non-transparent white */
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -53,7 +54,7 @@ input {
     border-radius: 4px;
     width: 100%;
     transition: border-color 0.3s ease, background-color 0.3s ease;
-    box-sizing: border-box; /* Added box-sizing property */
+    box-sizing: border-box;
 }
 
 input:hover {

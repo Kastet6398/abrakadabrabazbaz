@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title layout:fragment="title">Login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-
     <div class="login-container">
         <h1>Login</h1>
-        <form onsubmit="login(event)">
+        <form action="/login" method="post">
             <div class="input-group">
                 <label for="username">User:</label>
                 <input id="username" name="username" type="text" placeholder="Enter your username" required>
@@ -19,9 +18,7 @@
             </div>
             <button type="submit">Submit</button>
         </form>
-        <p class="info-text">Don't have an account? <a href="signup">Sign up</a></p>
+        <p class="info-text">Don't have an account? <a href="#">Sign up</a></p>
     </div>
-    <script src="/js/login.js"></script>
-
 </body>
 </html>

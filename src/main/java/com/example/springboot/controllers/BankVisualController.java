@@ -10,5 +10,13 @@ public class BankVisualController {
     public String showLoginPage() {
         return "login";
     }
+    @GetMapping("/signup")
+    public String showSignUpPage(){
+        return "signup";
+    }
+    @GetMapping("/homePage")
+    public String homePage(){
+        return "homePage";
+    }
 
 }
