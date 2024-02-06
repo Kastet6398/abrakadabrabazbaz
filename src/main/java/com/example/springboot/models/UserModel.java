@@ -14,7 +14,7 @@ public class UserModel {
         this.email = email;
         this.password = password;
 
-        UserModel user = new UserModel(username, email, password);
+        UserModel user = this;
         Gson gson = new Gson();
         String json = gson.toJson(user);
 

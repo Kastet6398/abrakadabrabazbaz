@@ -20,8 +20,6 @@ public class UserService {
             Gson gson = new Gson();
             Type userListType = new TypeToken<ArrayList<UserModel>>(){}.getType();
             users = gson.fromJson(reader, userListType);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
