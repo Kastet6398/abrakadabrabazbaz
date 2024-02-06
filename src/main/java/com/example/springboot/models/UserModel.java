@@ -1,6 +1,8 @@
 package com.example.springboot.models;
 
 import com.google.gson.Gson;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class UserModel {
     private String username;
@@ -11,6 +13,20 @@ public class UserModel {
         this.username = username;
         this.email = email;
         this.password = password;
+
+        UserModel user = new UserModel(username, email, password);
+        Gson gson = new Gson();
+        String json = gson.toJson(user);
+
+        try {
+            FileWriter writer = new FileWriter("user.json");
+            writer.write(json);
+            writer.close();
+            System.out.println("JSON файл успешно создан.");
+        } catch (IOException e) {
+            System.out.println("Произошла ошибка при создании JSON файла.");
+            e.printStackTrace();
+        }
     }
 
     public String getUsername() {
@@ -21,12 +37,12 @@ public class UserModel {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public String getPassword() {
@@ -35,14 +51,5 @@ public class UserModel {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String toJson() {
-        Gson gson = new Gson();
-        return gson.toJson(this);
-    }
-    public static UserModel fromJson(String json) {
-        Gson gson = new Gson();
-        return gson.fromJson(json, UserModel.class);
     }
 }

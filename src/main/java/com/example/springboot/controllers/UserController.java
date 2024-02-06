@@ -4,11 +4,10 @@ import com.example.springboot.models.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/api")
 public class UserController {
 
     @Autowired
@@ -26,5 +25,10 @@ public class UserController {
         userService.saveUser(user);
         return "redirect:/";
     }
-    //
+    @PostMapping("/createUser")
+    public String createUser(@RequestBody UserModel user) {
+        UserModel newUser = new UserModel(user.getUsername(), user.getEmail(), user.getPassword());
+        return "Пользователь успешно создан.";
+    }
+
 }

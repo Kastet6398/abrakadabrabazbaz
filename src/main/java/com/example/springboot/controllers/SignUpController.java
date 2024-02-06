@@ -18,9 +18,9 @@ public class SignUpController extends HttpServlet {
         String email = request.getParameter("signup-email");
         String password = request.getParameter("signup-password");
         String confirmPassword = request.getParameter("confirm-password");
-        
-        
-        
+
+
+
         if(password.equals(confirmPassword) && !UserName.equals("")){
         }
 
